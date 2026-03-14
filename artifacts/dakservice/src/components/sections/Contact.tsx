@@ -108,16 +108,51 @@ export function Contact() {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Helbeek+195,5914+SB+Venlo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 group"
+                >
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground font-medium mb-1">Werkgebied</p>
-                    <p className="text-base font-bold text-foreground">Actief in uw regio</p>
+                    <p className="text-sm text-muted-foreground font-medium mb-1">Adres</p>
+                    <p className="text-base font-bold text-foreground group-hover:text-primary transition-colors">Helbeek 195</p>
+                    <p className="text-sm text-muted-foreground">5914 SB Venlo</p>
                   </div>
-                </div>
+                </a>
               </div>
+            </motion.div>
+
+            {/* Google Maps embed */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="rounded-2xl overflow-hidden border border-border shadow-md"
+            >
+              <iframe
+                title="Locatie Dakservice Marc van Tankeren"
+                src="https://maps.google.com/maps?q=Helbeek+195,+5914+SB+Venlo,+Netherlands&z=15&output=embed"
+                width="100%"
+                height="220"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Helbeek+195,5914+SB+Venlo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 py-3 bg-white text-sm font-semibold text-primary hover:bg-slate-50 transition-colors border-t border-border"
+              >
+                <MapPin className="w-4 h-4" />
+                Openen in Google Maps
+              </a>
             </motion.div>
           </div>
 
