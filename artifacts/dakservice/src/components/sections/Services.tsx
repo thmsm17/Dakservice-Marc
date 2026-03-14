@@ -7,18 +7,21 @@ const services = [
     title: "Nieuwbouw",
     description: "Complete en vakkundige dakinstallaties voor uw nieuwbouwproject. Wij werken uitsluitend met hoogwaardige materialen voor een dak dat generaties lang meegaat.",
     icon: Home,
+    image: "service-nieuwbouw.png",
     delay: 0.1,
   },
   {
     title: "Renovatie",
     description: "Vervanging en herstel van verouderde of beschadigde daken. Geef uw woning een vernieuwde uitstraling en optimale bescherming tegen weersinvloeden.",
     icon: Hammer,
+    image: "service-renovatie.png",
     delay: 0.2,
   },
   {
     title: "Onderhoud",
     description: "Voorkom dure reparaties en lekkages met ons periodiek dakonderhoud. Wij inspecteren grondig, reinigen en voeren preventieve reparaties uit.",
     icon: PenTool,
+    image: "service-onderhoud.png",
     delay: 0.3,
   },
 ];
@@ -46,10 +49,21 @@ export function Services() {
               transition={{ duration: 0.5, delay: service.delay }}
             >
               <Card className="h-full border-border/50 shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all duration-300 group overflow-hidden bg-background">
-                <CardHeader className="relative pb-4">
-                  <div className="w-16 h-16 rounded-2xl bg-red-50 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <service.icon className="w-8 h-8" />
+                {/* Service photo */}
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={`${import.meta.env.BASE_URL}${service.image}`}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  {/* Icon badge over image */}
+                  <div className="absolute bottom-4 left-4 w-12 h-12 rounded-xl bg-white text-primary flex items-center justify-center shadow-lg group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <service.icon className="w-6 h-6" />
                   </div>
+                </div>
+
+                <CardHeader className="pb-2 pt-5">
                   <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
