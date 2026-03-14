@@ -1,0 +1,11 @@
+packages:
+  "framer-motion": "For elegant scroll reveals and hero animations"
+  "react-hook-form": "For robust contact form state management"
+  "@hookform/resolvers": "For Zod validation integration with react-hook-form"
+
+images: []
+
+notes:
+  - This is a static frontend SPA for a roofing business
+  - Uses hash-based smooth scrolling for navigation
+  - The contact form is a mock frontend-only implementation that shows a success toast
