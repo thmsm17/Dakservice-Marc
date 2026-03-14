@@ -80,13 +80,9 @@ export function Hero() {
             
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/10 border border-white/50 bg-white">
               <img 
-                src={`${import.meta.env.BASE_URL}busje.png`} 
-                alt="Dakservice Marc van Tankeren bedrijfsbus" 
-                className="w-full h-auto object-cover object-center aspect-[4/3] sm:aspect-auto"
-                onError={(e) => {
-                  // Fallback just in case busje.png doesn't load
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1621845118774-722a45d0ea1a?auto=format&fit=crop&q=80&w=1000";
-                }}
+                src={`${import.meta.env.BASE_URL}hero-roofer.png`} 
+                alt="Dakdekker aan het werk op een Nederlands woonhuis" 
+                className="w-full h-auto object-cover object-center aspect-[4/3]"
               />
               {/* Optional overlay gradient to make it pop */}
               <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-3xl" />
